@@ -1,0 +1,82 @@
+/* LogoCard.css */
+
+.sponsors-section {
+  background-color: #f5f5f5;
+  padding: 80px 80px;
+}
+
+.sponsors-container {
+  max-width: 1920px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+.sponsors-title {
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #000000;
+  margin: 0;
+}
+
+/* 
+  The grid on the right must be exactly 3 columns,
+  with a 24px gap between each column and row. 
+*/
+.grid-section {
+  flex: 0.5;
+  margin-left: 80create crepx;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 24px;
+  row-gap: 24px;
+}
+
+/* Each individual “card” that wraps a logo */
+.grid-item {
+  background-color: #ffffff;
+  border-radius: 18px;
+  width: 223.31px;
+  height: 109px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Constrain the logo inside each card exactly as in the reference */
+.logo-image {
+  max-width: 161.71px;
+  max-height: 47.49px;
+ 
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .sponsors-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .grid-section {
+    margin-left: 0;
+    margin-top: 40px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+
