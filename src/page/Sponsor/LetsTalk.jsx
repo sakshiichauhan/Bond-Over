@@ -1,6 +1,6 @@
 import styles from './LetsTalk.module.css';
 import phone from '../../assets/Sponsor/img/call.png';
-import message from '../../assets/Sponsor/img/message.png';
+import message from '../../assets/Sponsor/img/Message.png';
 import left from '../../assets/Sponsor/img/left.png';
 import right from '../../assets/Sponsor/img/right.png';
 
