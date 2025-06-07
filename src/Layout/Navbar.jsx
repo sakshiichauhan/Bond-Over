@@ -40,7 +40,7 @@ function Navbar() {
       {!isMenuOpen && (
         <div className={styles.mobileMenuToggle}>
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className={styles.menuButton}>
-            <FiMenu size={28} />
+            <FiMenu size={28} style={{color:linkColor}} />
           </button>
         </div>
       )}
