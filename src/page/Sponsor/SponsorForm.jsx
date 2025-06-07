@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-
+ 
 import RenderInput from "../../Layout/RenderInput";
 import GradientButton from "../../Components/GradientButton";
 import "./SponsorForm.css";
@@ -10,9 +10,9 @@ import merchIcon   from  "../../assets/Sponsor/Formicon/img3.png";
 import digitalIcon from  "../../assets/Sponsor/Formicon/img4.png";
 import csrIcon     from  "../../assets/Sponsor/Formicon/img5.png";
 import otherIcon   from  "../../assets/Sponsor/Formicon/img6.png";
-
+ 
 export default function SponsorForm() {
-
+ 
   const [organizationName, setOrganizationName]   = useState("");
   const [contactPersonName, setContactPersonName] = useState("");
   const [email, setEmail]                         = useState("");
@@ -23,7 +23,7 @@ export default function SponsorForm() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(null);
-
+ 
  
   const TYPE_OPTIONS = [
     { id: "title",       label: "Title Sponsor",       iconSrc: titleIcon   },
@@ -34,17 +34,17 @@ export default function SponsorForm() {
     { id: "others",      label: "Others",              iconSrc: otherIcon   },
   ];
   const handleMobileNumberChange = (e) => {
-
+ 
     const value = e.target.value.replace(/\D/g, '').slice(0, 10);
     setMobileNumber(value);
-    
+   
   };
-
+ 
   const toggleType = (id) =>
     setSelectedTypes((prev) =>
       prev.includes(id) ? prev.filter((t) => t !== id) : [...prev, id]
     );
-
+ 
   const addCustomType = () => {
     const t = customType.trim();
     if (t && !selectedTypes.includes(t)) {
@@ -52,13 +52,13 @@ export default function SponsorForm() {
       setCustomType("");
     }
   };
-
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setSuccess(false);
     setError("");
-    
+   
     try {
       await axios.post(
         "http://154.26.130.161/hswf/api/sponsor/enquiry",
@@ -92,16 +92,16 @@ export default function SponsorForm() {
       setLoading(false);
     }
   };
-
-
+ 
+ 
   return (
     <form className="sponsor-container" onSubmit={handleSubmit}>
       <h1 className="sponsor-title text-left">Sponsor Inquiry</h1>
-
+ 
    
       <div className="section">
         <p className="section-header text-left">Organisation Information</p>
-
+ 
         <RenderInput
           label="Organisation / Brand Name"
           name="organizationName"
@@ -124,13 +124,13 @@ export default function SponsorForm() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-
-  
+ 
+ 
         <div className="mobile-input__wrapper">
           <label htmlFor="mobileNumber" className="mobile-input__label">
             Mobile Number <span>*</span>
           </label>
-
+ 
           <div className="mobile-input__group">
             <span className="mobile-input__country">+91</span>
             <input
@@ -145,12 +145,12 @@ export default function SponsorForm() {
           </div>
         </div>
       </div>
-
-
+ 
+ 
      <div className="sts-wrapper">
       <h2 className="sts-heading">Preferred Sponsorship Type</h2>
       <p className="sts-description">Select one or more:</p>
-
+ 
       <div className="sts-options">
        {TYPE_OPTIONS.map(({ id, label, icon: Icon, iconSrc }) => (
   <button
@@ -165,13 +165,13 @@ export default function SponsorForm() {
     ) : (
       <Icon size={16} className="sts-btn__icon" />
     )}
-
+ 
     <span className="sts-btn__label">{label}</span>
   </button>
 ))}
-
+ 
       </div>
-
+ 
       <div className="sts-input-group">
         <input
           type="text"
@@ -179,34 +179,36 @@ export default function SponsorForm() {
           onChange={(e) => setCustomType(e.target.value)}
           placeholder="Enter Sponsorship Type"          className="sts-input"
         />
-        <button type="button" className="gbtn" onClick={addCustomType}>Add</button>
+        <button type="button" className="button gbtn" onClick={addCustomType}>Add</button>
       </div>
     </div>
       {/* ---------- Section 3 ---------- */}
       <div className="section">
         <p className="section-header text-left">Message / Query</p>
         <p className="small-note text-left">Share any Sponsor Inquiry</p>
-
+ 
         <RenderInput
           label="Message"
           name="message"
           isTextarea
           placeholder="Write here...."
-          
+         
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           className="message-block"
         />
-      </div>     
+      </div>
+      <div className="wrapBtn">
       <GradientButton type="submit" disabled={loading}>
         {loading ? "Submitting..." : "Submit"}
       </GradientButton>
-
-    
+       </div>  
+   
       {success && <p className="success-message">Form submitted successfully!</p>}
-
+ 
      
       {error && <p className="error-message">{error}</p>}
     </form>
   );
 }
+ 
