@@ -45,11 +45,7 @@ const partners = [
 const Sponser = () => {
   return (
     <div className={styles.container}>
-<<<<<<< HEAD
   <div className={styles.navWrapper}>
-=======
-      <div className={styles.navWrapper}>
->>>>>>> cb7ad6b3d6d9860854943072f59cea870a633490
           <Navbar />
       </div>
       <section className={styles.heroSection}>
