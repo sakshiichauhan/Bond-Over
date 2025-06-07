@@ -38,7 +38,9 @@ const OPTION = [
 export default function PartnerInterest() {
   return (
     <div>
-      <Navbar />
+      <div className={styles.navWrapper}>
+          <Navbar />
+      </div>
       <PartnerBond />
       <FormBody />
       <Footer />
