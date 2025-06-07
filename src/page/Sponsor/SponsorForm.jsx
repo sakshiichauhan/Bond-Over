@@ -159,7 +159,7 @@ export default function SponsorForm() {
     onClick={() => toggleType(id)}
     className={`sts-btn ${selectedTypes.includes(id) ? "sts-btn--selected" : ""}`}
   >
-    {/* NEW logic: image first, otherwise Feather icon */}
+    
     {iconSrc ? (
       <img src={iconSrc} alt="" className="sts-btn__icon-img" />
     ) : (
