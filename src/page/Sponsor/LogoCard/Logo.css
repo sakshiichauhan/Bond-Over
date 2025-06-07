@@ -104,60 +104,6 @@
   .sponsors-section {
     padding: 40px 24px;
   }
-<<<<<<< HEAD
-=======
-
-  .sponsors-title {
-    font-size: 36px;
-  }
-
-  .grid-section {
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 12px;
-    row-gap: 12px;
-  }
-
-  .grid-item {
-    width: 130px;
-    height: 70px;
-    padding: 8px;
-    border-radius: 12px;
-  }
-
-  .logo-image {
-    max-width: 100px;
-    max-height: 32px;
-  }
-}
-
-@media (max-width: 500px) {
-  .sponsors-section {
-    padding: 32px 16px;
-  }
-
-  .sponsors-title {
-    font-size: 28px;
-  }
-
-  .grid-section {
-    grid-template-columns: repeat(3, 1fr); /* 👑 Keep 3 per row */
-    column-gap: 8px;
-    row-gap: 12px;
-  }
-
-  .grid-item {
-    width: 100%;
-    height: 60px;
-    padding: 6px;
-    border-radius: 10px;
-  }
-
-  .logo-image {
-    max-width: 80px;
-    max-height: 28px;
-  }
-}
->>>>>>> cb7ad6b3d6d9860854943072f59cea870a633490
 
   .sponsors-title {
     font-size: 36px;

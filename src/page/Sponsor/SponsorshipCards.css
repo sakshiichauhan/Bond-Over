@@ -18,13 +18,8 @@
   margin-bottom: 32px;
   grid-template-columns: 1fr;
 }
-<<<<<<< HEAD
  
  
-=======
-
-
->>>>>>> cb7ad6b3d6d9860854943072f59cea870a633490
   .card-row-top {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
@@ -120,11 +115,7 @@
     padding-right: 40px;
     padding-bottom: 0; /* bottom padding removed */
   }
-<<<<<<< HEAD
  
-=======
-
->>>>>>> cb7ad6b3d6d9860854943072f59cea870a633490
  
 .card-wrapper {
   position: relative;
@@ -267,7 +258,6 @@
   }
 }
  
-<<<<<<< HEAD
  
 @media (max-width:1570px) {
   .card-title{
@@ -286,8 +276,6 @@
   }
 }
  
-=======
->>>>>>> cb7ad6b3d6d9860854943072f59cea870a633490
 @media (max-width: 1140px) {
   .sponsorship-container{
     padding-left: 80px;
@@ -345,31 +333,19 @@
     gap: 16px;
     border-radius: 22px;
   }
-<<<<<<< HEAD
  
-=======
-
->>>>>>> cb7ad6b3d6d9860854943072f59cea870a633490
   .card-row-top .card-wrapper .card-text {
     width: 100% !important;
     order: 1;
   }
-<<<<<<< HEAD
  
-=======
-
->>>>>>> cb7ad6b3d6d9860854943072f59cea870a633490
   .card-row-top .card-wrapper .card-image-wrapper {
     width: 100% !important;
     margin-top: 16px;
     border-radius: 22px;
     order: 2;
   }
-<<<<<<< HEAD
  
-=======
-
->>>>>>> cb7ad6b3d6d9860854943072f59cea870a633490
   .card-row-top .card-wrapper .top-image {
     display: block;
     width: 100%;
@@ -382,22 +358,14 @@
     position: relative;
     bottom: -1px; /* mimic bottom-card vertical offset */
   }
-<<<<<<< HEAD
  
-=======
-
->>>>>>> cb7ad6b3d6d9860854943072f59cea870a633490
   .card-row-top .card-wrapper .icon-overlay {
     top: -20px;
     right: -20px;
     width: 84px;
     height: 84px;
   }
-<<<<<<< HEAD
  
-=======
-
->>>>>>> cb7ad6b3d6d9860854943072f59cea870a633490
   .card-row-top .card-wrapper .icon-img {
     width: 61.44px;
     height: 61.44px;
@@ -410,11 +378,7 @@
     text-align: left;
   }
 }
-<<<<<<< HEAD
  
-=======
-
->>>>>>> cb7ad6b3d6d9860854943072f59cea870a633490
 @media (max-width: 1140px) and (min-width: 551px) {
   .card-row-bottom .card-wrapper .card-content {
     flex-direction: row !important;
@@ -432,22 +396,14 @@
     text-align: left;
     order: 1;
   }
-<<<<<<< HEAD
  
-=======
-
->>>>>>> cb7ad6b3d6d9860854943072f59cea870a633490
   .card-row-bottom .card-wrapper .card-image-wrapper {
     flex: 0 0 50%;
     margin-top: 16px;
     border-radius: 22px;
     order: 2;
   }
-<<<<<<< HEAD
  
-=======
-
->>>>>>> cb7ad6b3d6d9860854943072f59cea870a633490
   .card-row-bottom .card-wrapper .bottom-image {
     display: block;
     width: 100%;
@@ -460,22 +416,14 @@
     position: relative;
     bottom: -1px;
   }
-<<<<<<< HEAD
  
-=======
-
->>>>>>> cb7ad6b3d6d9860854943072f59cea870a633490
   .card-row-bottom .card-wrapper .icon-overlay {
     top: -20px;
     right: -20px;
     width: 84px;
     height: 84px;
   }
-<<<<<<< HEAD
  
-=======
-
->>>>>>> cb7ad6b3d6d9860854943072f59cea870a633490
   .card-row-bottom .card-wrapper .icon-img {
     width: 61.44px;
     height: 61.44px;
