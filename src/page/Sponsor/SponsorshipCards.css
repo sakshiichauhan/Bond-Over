@@ -18,8 +18,8 @@
   margin-bottom: 32px;
   grid-template-columns: 1fr;
 }
-
-
+ 
+ 
   .card-row-top {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
@@ -115,7 +115,7 @@
     padding-right: 40px;
     padding-bottom: 0; /* bottom padding removed */
   }
-
+ 
  
 .card-wrapper {
   position: relative;
@@ -258,6 +258,24 @@
   }
 }
  
+ 
+@media (max-width:1570px) {
+  .card-title{
+    font-size: 24px;
+  }
+  .card-description{
+    font-size: 20px;
+  }
+}
+@media (max-width:1370px) {
+  .sponsorship-container {
+  padding: 64px 100px;
+  }
+  .section-title{
+    font-size: 52px;
+  }
+}
+ 
 @media (max-width: 1140px) {
   .sponsorship-container{
     padding-left: 80px;
@@ -315,19 +333,19 @@
     gap: 16px;
     border-radius: 22px;
   }
-
+ 
   .card-row-top .card-wrapper .card-text {
     width: 100% !important;
     order: 1;
   }
-
+ 
   .card-row-top .card-wrapper .card-image-wrapper {
     width: 100% !important;
     margin-top: 16px;
     border-radius: 22px;
     order: 2;
   }
-
+ 
   .card-row-top .card-wrapper .top-image {
     display: block;
     width: 100%;
@@ -340,14 +358,14 @@
     position: relative;
     bottom: -1px; /* mimic bottom-card vertical offset */
   }
-
+ 
   .card-row-top .card-wrapper .icon-overlay {
     top: -20px;
     right: -20px;
     width: 84px;
     height: 84px;
   }
-
+ 
   .card-row-top .card-wrapper .icon-img {
     width: 61.44px;
     height: 61.44px;
@@ -360,7 +378,7 @@
     text-align: left;
   }
 }
-
+ 
 @media (max-width: 1140px) and (min-width: 551px) {
   .card-row-bottom .card-wrapper .card-content {
     flex-direction: row !important;
@@ -378,14 +396,14 @@
     text-align: left;
     order: 1;
   }
-
+ 
   .card-row-bottom .card-wrapper .card-image-wrapper {
     flex: 0 0 50%;
     margin-top: 16px;
     border-radius: 22px;
     order: 2;
   }
-
+ 
   .card-row-bottom .card-wrapper .bottom-image {
     display: block;
     width: 100%;
@@ -398,14 +416,14 @@
     position: relative;
     bottom: -1px;
   }
-
+ 
   .card-row-bottom .card-wrapper .icon-overlay {
     top: -20px;
     right: -20px;
     width: 84px;
     height: 84px;
   }
-
+ 
   .card-row-bottom .card-wrapper .icon-img {
     width: 61.44px;
     height: 61.44px;

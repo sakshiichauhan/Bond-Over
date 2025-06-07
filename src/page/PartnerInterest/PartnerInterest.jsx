@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from "react"; 
 import Navbar from "../../Layout/Navbar";
 import Footer from "../../Layout/footer/Footer";
 import RenderInput from "../../Layout/RenderInput";
@@ -70,8 +70,6 @@ function FormBody() {
   const [mobileNumber, setMobileNumber] = useState("");
 
   const [selectedOrgType, setSelectedOrgType] = useState("");
-
-  
   const [selectedInterestTypes, setSelectedInterestTypes] = useState([]);
 
   const [description, setDescription] = useState("");
@@ -84,12 +82,10 @@ function FormBody() {
     setMobileNumber(value);
   };
 
-  
   const chooseOrgType = (typeId) => {
     setSelectedOrgType(typeId);
   };
 
-  
   const toggleInterestType = (typeId) => {
     setSelectedInterestTypes((prev) => {
       if (prev.includes(typeId)) {
@@ -107,28 +103,32 @@ function FormBody() {
     setError("");
 
     try {
+      // build FormData instead of JSON
+      const form = new FormData();
+      form.append("organisation_name", organizationName);
+      form.append("name", name);
+      form.append("phone", mobileNumber);
+      form.append("email", email);
+      form.append("type", selectedOrgType);
+      // send each interest as interests[]
+      selectedInterestTypes.forEach((interest) =>
+        form.append("interests[]", interest)
+      );
+      form.append("query", description);
 
       await axios.post(
         "http://154.26.130.161/hswf/api/partner/interests",
-        {
-          organisation_name: organizationName,
-          name,
-          phone: mobileNumber,
-          email,
-          type: selectedOrgType,            // single‐select
-          interests: selectedInterestTypes, // multi‐select interests
-          query: description,
-        },
+        form,
         {
           headers: {
             Accept: "application/json",
-            "Content-Type": "application/json",
+            "Content-Type": "multipart/form-data",
           },
         }
       );
 
       setSuccess(true);
-    
+      // reset form
       setOrganizationName("");
       setName("");
       setEmail("");
@@ -137,6 +137,7 @@ function FormBody() {
       setSelectedInterestTypes([]);
       setDescription("");
     } catch (err) {
+      console.error("Submit error:", err);
       setError("Submission failed. Please try again.");
     } finally {
       setLoading(false);
@@ -148,8 +149,6 @@ function FormBody() {
       <form className={styles.formContainer} onSubmit={handleSubmit}>
         <h1 className={styles.formHeadingLarge}>Partner Interest Form</h1>
 
-
-   
         <div className={styles.section}>
           <h2 className={styles.formSubHeading}>Organization Info</h2>
           <RenderInput
@@ -198,7 +197,6 @@ function FormBody() {
           </div>
         </div>
 
-       
         <div className={styles.stsWrapper}>
           <h2 className={styles.stsHeading}>Type of Organization</h2>
           <p className={styles.stsDescription}>Choose one:</p>
@@ -212,13 +210,16 @@ function FormBody() {
                   selectedOrgType === id ? styles.stsBtnSelected : ""
                 }`}
               >
-                <img src={iconSrc} alt={label} className={styles.stsBtnIconImg} />
+                <img
+                  src={iconSrc}
+                  alt={label}
+                  className={styles.stsBtnIconImg}
+                />
                 <span className={styles.stsBtnLabel}>{label}</span>
               </button>
             ))}
           </div>
         </div>
-
 
         <div className={styles.stsWrapper}>
           <h2 className={styles.stsHeading}>Area of Interest</h2>
@@ -230,21 +231,27 @@ function FormBody() {
                 type="button"
                 onClick={() => toggleInterestType(id)}
                 className={`${styles.stsBtn} ${
-                  selectedInterestTypes.includes(id) ? styles.stsBtnSelected : ""
+                  selectedInterestTypes.includes(id)
+                    ? styles.stsBtnSelected
+                    : ""
                 }`}
               >
-                <img src={iconSrc} alt={label} className={styles.stsBtnIconImg} />
+                <img
+                  src={iconSrc}
+                  alt={label}
+                  className={styles.stsBtnIconImg}
+                />
                 <span className={styles.stsBtnLabel}>{label}</span>
               </button>
             ))}
           </div>
         </div>
 
-
-       
         <div className={styles.section}>
           <h2 className={styles.formSubHeading}>Message / Proposal (Optional)</h2>
-          <p className={styles.smallNote}>Share any brief proposal or interest point</p>
+          <p className={styles.smallNote}>
+            Share any brief proposal or interest point
+          </p>
           <RenderInput
             label="Message"
             name="description"
@@ -263,7 +270,11 @@ function FormBody() {
           disabled={loading}
         />
 
-        {success && <div className={styles.successMessage}>Form submitted successfully!</div>}
+        {success && (
+          <div className={styles.successMessage}>
+            Form submitted successfully!
+          </div>
+        )}
         {error && <div className={styles.errorMessage}>{error}</div>}
       </form>
     </section>
