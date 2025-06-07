@@ -182,8 +182,7 @@ export default function SponsorForm() {
         <button type="button" className="button gbtn" onClick={addCustomType}>Add</button>
       </div>
     </div>
-      {/* ---------- Section 3 ---------- */}
-      <div className="section">
+      <div className="section mobileMargin">
         <p className="section-header text-left">Message / Query</p>
         <p className="small-note text-left">Share any Sponsor Inquiry</p>
  
@@ -211,4 +210,3 @@ export default function SponsorForm() {
     </form>
   );
 }
- 

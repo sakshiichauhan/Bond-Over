@@ -203,6 +203,8 @@
   font-size: 1.125rem;
   color: #4b5563;
   transition: box-shadow 0.15s ease;
+  width: 10px;
+  
 }
 
 .mobile-input__field::placeholder {
@@ -274,6 +276,7 @@
   display: flex;
   gap: 0.75rem;
   align-items: flex-end;
+  flex-wrap: wrap;
 }
 
 .sts-input {
@@ -333,4 +336,13 @@
 .wrapBtn{
   width: 100%;
   text-align: left;
+}
+@media (max-width:764px) {
+  .SubmitBtn{
+  padding: 12px 32px;
+  font-size: 20px;
+}
+.mobileMargin{
+  margin-top: 16px;
+}
 }

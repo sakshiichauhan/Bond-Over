@@ -45,7 +45,9 @@ const partners = [
 const Sponser = () => {
   return (
     <div className={styles.container}>
-      <Navbar />
+  <div className={styles.navWrapper}>
+          <Navbar />
+      </div>
       <section className={styles.heroSection}>
       <div className={styles.container}>
         <h1 className={styles.heroTitle}>Sponsor Bond Over Sports</h1>
