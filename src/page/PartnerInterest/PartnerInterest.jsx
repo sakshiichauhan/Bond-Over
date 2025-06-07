@@ -321,6 +321,9 @@ export default function PartnerInterest() {
       <div className={styles.navWrapper}>
         <Navbar />
       </div>
+      <div className={styles.navWrapper}>
+          <Navbar />
+      </div>
       <PartnerBond />
       <FormBody />
       <Footer />
