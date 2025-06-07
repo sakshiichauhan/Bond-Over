@@ -8,7 +8,6 @@ import digitalImg from "../../assets/Sponsor/Sponsorship3.png";
 import causeImg from "../../assets/Sponsor/Sponsorship4.png";
 import kitImg from "../../assets/Sponsor/Sponsorship5.png";
 
-// Import your icon images (24×24px PNG/SVG)
 import titleIcon from "../../assets/Sponsor/StarHands.png";
 import zoneIcon from "../../assets/Sponsor/Target.png";
 import digitalIcon from "../../assets/Sponsor/Digital.png";
